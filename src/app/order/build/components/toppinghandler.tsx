@@ -7,9 +7,13 @@ export default function ToppingHandler(){
     const toppingsVegtables : string[] = ["mushrooms", "onions", "olives",  "pineapple", "green peppers", "banana peppers", "roma tomatoes", "fresh spinach", ];
     const image : string[] = ["toppings-pepperoni.webp", "toppings-sausage.webp", "toppings-mushrooms.webp", "toppings-black-olives.webp", "toppings-onions.webp", "toppings-banana-peppers.webp", "toppings-pineapples.webp", "toppings-green-peppers.webp", "toppings-anchovies.webp"];
     const toppings : string[] = ["pepperoni", "sausage", "mushrooms", "olives", "onions", "banana peppers", "pineapple", "peppers", "anchovies"];
+    
+    const imageMeat2 : string[] = ["toppings-pepperoni.webp", "toppings-sausage.webp","toppings-bacon.webp"];
+    const toppingsMeat2 : string[] = ["pepperoni", "sausage", "bacon"];
     return (
         <div>
-            {toppingsVegtables.map((item, index) => ( <Topping image={imageVegtables[index]} name={item} /> ))}
+
+            {toppingsMeat.map((item, index) => ( <Topping key={index} image={imageMeat[index]} name={item} /> ))}
         </div>
     );
 }

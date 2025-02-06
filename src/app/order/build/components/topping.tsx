@@ -6,6 +6,7 @@ import { useState } from "react";
 interface ToppingProps {
     image: string;
     name: string;
+    key: number;
 }
 
 enum Side {
@@ -62,19 +63,22 @@ export default function Topping(props: ToppingProps) {
   }
 
   return (
-    <div>
-      <div className={`flex h-32  ${checked ? '' : 'border-b-2'}  `}>
+    <div className="">
+      
+      <div className={`flex h-24 ${checked ? '' : 'border-b-2'}  `}>
         <div className="mr-5 flex justify-center items-center">
           <Checkbox color="success" size="large" onChange={() => setChecked(!checked)} />
         </div>
         <div>
-          <div className="h-32 justify-center items-center flex">
-          <Image
+          <div className=" h-10 w-10 lg:h-20 lg:w-20 mr-7 lg:mr-5 ">
+            <div className="absolute h-16 w-16 lg:h-20 lg:w-20 mt-2 lg:mt-1  ">
+            <Image
             src={`/assets/${props.image}`}
-            width={80}
-            height={80}
+            fill={true}
             alt="pepp"
           />
+            </div>
+          
           </div>
           
         </div>
@@ -85,6 +89,7 @@ export default function Topping(props: ToppingProps) {
         </div>
         
       </div>
+      
       { checked &&
       <div className="flex  gap-3 justify-between border-b-2">
         <div className="flex gap-3 ml-2 mb-4" >
